@@ -8,7 +8,7 @@ const connectedUsers = new Map();
 export const initializeSocket = (httpServer) => {
 	io = new Server(httpServer, {
 		cors: {
-			origin: "http://localhost:5173",
+			origin: process.env.CLIENT_URL,
 			credentials: true,
 		},
 	});
